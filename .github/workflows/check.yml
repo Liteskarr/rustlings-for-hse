@@ -8,6 +8,8 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  COLUMNS: 80
+  LINES: 24
 
 jobs:
   dev-check:
@@ -18,9 +20,6 @@ jobs:
       - name: rustlings install
         run: cargo install rustlings
       - name: output check
-        run: |
-          export COLUMNS=80
-          export LINES=24
-          rustlings check-all
+        run: rustlings check-all
       - name: rustlings done check
         run: rustlings check-all | grep -q "You made it to the Fe-nish line\!"
