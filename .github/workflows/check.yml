@@ -1,8 +1,6 @@
 name: Check
 
 on:
-  push:
-    branches: [master]
   pull_request:
     branches: [master]
 
@@ -19,5 +17,5 @@ jobs:
         run: |
           cd rustlings_cli
           cargo install --path .
-      - name: Run rustlings check-all without terminal size error
+      - name: Run rustlings check-all in mininal set up
         run: rustlings-hse check-all -m
