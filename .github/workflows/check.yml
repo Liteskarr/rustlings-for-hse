@@ -17,5 +17,7 @@ jobs:
       - uses: swatinem/rust-cache@v2
       - name: rustlings install
         run: cargo install rustlings
+      - name: output check
+        run: rustlings check-all
       - name: rustlings done check
         run: rustlings check-all | grep -q "You made it to the Fe-nish line\!"
