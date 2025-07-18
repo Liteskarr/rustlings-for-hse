@@ -15,6 +15,8 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+      - name: Install rustlings
+        run: cargo install rustlings
       - name: Run rustlings check-all without terminal size error
         run: rustlings check-all
         env:
