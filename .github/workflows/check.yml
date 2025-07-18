@@ -1,0 +1,19 @@
+name: Check
+
+on:
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  dev-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swatinem/rust-cache@v2
+      - name: rustlings install
+        run: cargo install rustlings
+      - name: rustlings done check
+        run: rustlings check-all | grep -q "You made it to the Fe-nish line\!"
